@@ -203,7 +203,7 @@ export default function ChatWindow() {
           <input
             type="text"
             className="border rounded-lg md:rounded-xl w-screen p-2 md:p-3 shadow-md outline-none"
-            placeholder="Please ask a question"
+            placeholder="Message Bot AI..."
             value={question}
             onChange={(e) => setQuestion(e.target.value)}
           />
