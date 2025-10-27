@@ -1,5 +1,6 @@
 /* eslint-disable no-lone-blocks */
 import profile from "../assets/Group 1000011097.svg";
+import { useNavigate } from "react-router-dom";
 import NavBar from "./navBar";
 import newChat from "../assets/image 31.svg";
 import data from "../data.json";
@@ -17,6 +18,7 @@ export default function ChatWindow() {
   const [qaPair, setQaPair] = useState([]);
 
   const messageRef = useRef(null);
+  const navigate = useNavigate();
 
   {
     /*functions start here************************ */
@@ -67,7 +69,7 @@ export default function ChatWindow() {
 
     const botAnswer = ansFound
       ? ansFound.response
-      : "Sorry, did not understand your query!";
+      : <p>Sorry, did not understand your query!</p>;
 
     let cardId = ansFound ? ansFound.id : Date.now();
 
@@ -115,6 +117,7 @@ export default function ChatWindow() {
               setQuestion("");
               setQaPair([]);
               setPastChat(true);
+              navigate('/history')
             }}
           >
             Past Conversations
@@ -153,6 +156,7 @@ export default function ChatWindow() {
                 setQuestion("");
                 setQaPair([]);
                 setPastChat(true);
+                navigate('/history');
               }}
             >
               Past Conversations
@@ -216,8 +220,9 @@ export default function ChatWindow() {
               Ask
             </button>
             <button
-              className="px-3 md:px-7 bg-[#D7C7F4] rounded-lg md:rounded-xl shadow-md font-semibold"
-              onClick={handleSaveChat}
+            type="button"
+            className="px-3 md:px-7 bg-[#D7C7F4] rounded-lg md:rounded-xl shadow-md font-semibold"
+            onClick={handleSaveChat}
             >
               Save
             </button>
