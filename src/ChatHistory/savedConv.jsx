@@ -14,7 +14,7 @@ export default function PastConversation() {
   return (
     <div>
       <div className="flex flex-col gap-5 w-full overflow-auto pl-3">
-        <h1 className="font-semibold text-4xl text-center pt-3 my-6">Conversation History</h1>
+        <h1 className="font-semibold text-4xl text-center pt-3 my-6">Past Conversations</h1>
 
         <h3 className="text-start font-semibold text-lg">Today's Chats</h3>
         <div className="h-[350px] md:h-[420px] overflow-auto flex flex-col gap-5 rounded-lg">

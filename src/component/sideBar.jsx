@@ -1,6 +1,6 @@
 import profile from "../assets/Group 1000011097.svg";
 import newChat from "../assets/image 31.svg";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function SideBar({
   setQuestion,
@@ -9,7 +9,8 @@ export default function SideBar({
   isOpen,
   setIsOpen,
 }) {
-  const navigate = useNavigate();
+
+  
   return (
     <div>
       <div className="hidden md:flex flex-col gap-5">
@@ -26,16 +27,16 @@ export default function SideBar({
             <img src={newChat} alt="Newchat.svg" />
           </button>
         </div>
-        <button
+        <Link
+        to='/history'
           className="bg-[#D7C7F4] rounded-xl py-3 mx-3 font-bold shadow-md"
           onClick={() => {
             setQuestion("");
             setQaPair([]);
-            navigate("/history");
           }}
         >
           Past Conversations
-        </button>
+        </Link>
       </div>
 
       {/*mobile hamburger menu start here */}
@@ -64,16 +65,16 @@ export default function SideBar({
                 <img src={newChat} alt="Newchat.svg" />
               </button>
             </div>
-            <button
+            <Link
+              to="/history"
               className="bg-[#D7C7F4] rounded-xl py-2 px-2 md:py-3 mx-3 font-bold shadow-md text-nowrap text-sm md:text-base"
               onClick={() => {
                 setQuestion("");
                 setQaPair([]);
-                navigate("/history");
               }}
             >
               Past Conversations
-            </button>
+            </Link>
           </div>
         )}
       </div>
