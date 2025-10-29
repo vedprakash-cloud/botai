@@ -1,8 +1,12 @@
 
 
 export default function Buttons({question, setQuestion, handleClick, handleSaveChat}){
+  const handleSubmit = (e)=>{
+    e.preventDefault();
+    handleClick();
+  }
     return (
-        <div className="flex absolute bottom-0 w-4/5 mb-5">
+        <form onSubmit={handleSubmit} className="flex absolute bottom-0 w-4/5 mb-5">
           <input
             type="text"
             className="border rounded-lg md:rounded-xl w-screen p-2 md:p-3 shadow-md outline-none"
@@ -14,7 +18,6 @@ export default function Buttons({question, setQuestion, handleClick, handleSaveC
             <button
               type="submit"
               className="text-sm px-3 md:px-7 bg-[#D7C7F4] rounded-lg md:rounded-xl font-semibold shadow-md"
-              onClick={handleClick}
             >
               Ask
             </button>
@@ -26,6 +29,6 @@ export default function Buttons({question, setQuestion, handleClick, handleSaveC
               Save
             </button>
           </div>
-        </div>
+        </form>
     )
 }

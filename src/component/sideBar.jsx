@@ -29,7 +29,7 @@ export default function SideBar({
         </div>
         <Link
         to='/history'
-          className="bg-[#D7C7F4] rounded-xl py-3 mx-3 font-bold shadow-md"
+          className="bg-[#D7C7F4] rounded-xl pl-5 py-3 mx-3 font-bold shadow-md"
           onClick={() => {
             setQuestion("");
             setQaPair([]);
@@ -54,6 +54,9 @@ export default function SideBar({
                 className="w-5 md:w-10 shadow-xs"
               />
               <p className="text-sm md:text-base">New Chat</p>
+              <Link
+              to='/'
+              >
               <button
                 className="w-5 md:w-10"
                 onClick={() => {
@@ -64,10 +67,11 @@ export default function SideBar({
               >
                 <img src={newChat} alt="Newchat.svg" />
               </button>
+              </Link>
             </div>
             <Link
               to="/history"
-              className="bg-[#D7C7F4] rounded-xl py-2 px-2 md:py-3 mx-3 font-bold shadow-md text-nowrap text-sm md:text-base"
+              className="bg-[#D7C7F4] rounded-xl px-2 py-3 mx-3 font-bold shadow-md text-nowrap text-sm md:text-base"
               onClick={() => {
                 setQuestion("");
                 setQaPair([]);
