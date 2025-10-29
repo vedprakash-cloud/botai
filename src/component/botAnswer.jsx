@@ -13,7 +13,7 @@ export default function BotAnswer({onAsk,time}){
             </div>
             <div className='w-full group flex flex-col'>
                 <span className='text-sm'>Soul AI</span>
-                <span className='mb-2 text-sm md:text-base'>{onAsk}</span>
+                <p className='mb-2 text-sm md:text-base'>{onAsk}</p>
                 <div className='flex gap-2'>
                     <p>{time}</p>
                     <div className={`${rating ? 'block opacity-100' : 'hidden group-hover:block hover:block opacity-0 group-hover:opacity-100 hover:opacity-100'}`}>

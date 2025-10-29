@@ -1,7 +1,6 @@
 /* eslint-disable no-lone-blocks */
 import profile from "../assets/Group 1000011097.svg";
 import { useNavigate } from "react-router-dom";
-import NavBar from "./navBar";
 import newChat from "../assets/image 31.svg";
 import data from "../data.json";
 import { useState, useRef, useEffect } from "react";
@@ -68,8 +67,7 @@ export default function ChatWindow() {
     );
 
     const botAnswer = ansFound
-      ? ansFound.response
-      : <p>Sorry, did not understand your query!</p>;
+    ? ansFound.response:<p>Sorry, Did not understand your query!</p>
 
     let cardId = ansFound ? ansFound.id : Date.now();
 
@@ -168,9 +166,6 @@ export default function ChatWindow() {
       {/*************************chat screen starts here*******************/}
 
       <div className="px-5 w-full">
-        <div className="text-start text-4xl text-[#9785BA] font-bold">
-          <NavBar />
-        </div>
         {pastChat ? (
           <div>
             <SavedChat />

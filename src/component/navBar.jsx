@@ -8,7 +8,8 @@ export default function NavBar(){
     }
     return (
         <h1
-        onClick={handleCLick}>
+        onClick={handleCLick}
+        className='cursor-pointer'>
             Bot AI
         </h1>
     )
