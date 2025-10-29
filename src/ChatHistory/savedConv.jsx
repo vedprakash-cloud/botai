@@ -13,16 +13,16 @@ export default function PastConversation() {
 
   return (
     <div>
-      <div className="flex flex-col gap-5 w-full overflow-auto rounded-md">
-        <h2 className="font-semibold text-2xl text-center pt-3">Conversation History</h2>
+      <div className="flex flex-col gap-5 w-full overflow-auto pl-3">
+        <h1 className="font-semibold text-4xl text-center pt-3 my-6">Conversation History</h1>
 
         <h3 className="text-start font-semibold text-lg">Today's Chats</h3>
-        <div className="h-[350px] md:h-[420px] overflow-auto flex flex-col gap-5">
+        <div className="h-[350px] md:h-[420px] overflow-auto flex flex-col gap-5 rounded-lg">
           {past.map((item)=>item.map(
           (chat)=>
             (
-          <div key={chat.id} className="bg-[#D7C7F4] rounded-xl py-3 mx-3 font-bold shadow-lg text-xs p-6">
-            <div>
+          <div key={chat.id} className="bg-[#D7C7F4] rounded-xl py-3 mx-3 shadow-lg text-xs p-6">
+            <div className="p-2 mb-2">
               <ChatCard onAsk={chat.question.text} isUser={chat.isUser} time={chat.question.time}/>
             </div>
             <div>

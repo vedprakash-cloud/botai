@@ -7,11 +7,11 @@ export default function BotAnswer({onAsk,time}){
     const [rating, setRating] = useState(null)
 
     return (
-        <div className={`p-6 font-semibold shadow-md rounded-xl flex h-min text-start gap-5 border border-[#D7C7F4]`}>
+        <div className='flex gap-3'>
             <div className= 'h-min rounded-full'>
-                <img src={bot} alt="user-profile.svg" className='w-full h-full object-cover' />
+                <img src={bot} alt="user-profile.svg" />
             </div>
-            <div className='w-full group flex flex-col'>
+            <div className='w-full flex flex-col'>
                 <span className='text-sm'>Soul AI</span>
                 <p className='mb-2 text-sm md:text-base'>{onAsk}</p>
                 <div className='flex gap-2'>

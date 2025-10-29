@@ -4,7 +4,7 @@ export default function ChatCard({onAsk,time}){
 
 
     return(
-        <div className={`p-6 font-semibold shadow-md rounded-xl flex h-min text-start gap-5`}>
+        <div className='flex gap-3'>
             <div className='shadow-lg h-min rounded-full'>
                 <img src={user} alt="user-profile.svg" />
             </div>
