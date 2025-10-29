@@ -14,18 +14,20 @@ export default function SideBar({
   return (
     <div>
       <div className="hidden md:flex flex-col gap-5">
-        <div className="bg-[#D7C7F4] py-1 px-0 text-lg flex items-center justify-evenly">
+        <div className="bg-[#D7C7F4] py-1 px-0 text-lg flex justify-evenly rounded-sm">
           <img src={profile} alt="logo.svg" className="w-10 shadow-xs" />
-          <p>New Chat</p>
-          <button
-            onClick={() => {
+          <Link
+          to='/'
+          onClick={() => {
               setQuestion("");
               setQaPair([]);
               setChatWindow(true);
             }}
+            className="flex items-center gap-2"
           >
+            <p>New Chat</p>
             <img src={newChat} alt="Newchat.svg" />
-          </button>
+          </Link>
         </div>
         <Link
         to='/history'
@@ -47,26 +49,23 @@ export default function SideBar({
         </button>
         {isOpen && (
           <div className="flex flex-col gap-5">
-            <div className="bg-[#D7C7F4] py-1 text-lg flex items-center justify-evenly rounded-sm">
+            <div className="bg-[#D7C7F4] py-1 text-lg flex justify-evenly rounded-sm">
               <img
                 src={profile}
                 alt="logo.svg"
                 className="w-5 md:w-10 shadow-xs"
               />
-              <p className="text-sm md:text-base">New Chat</p>
               <Link
               to='/'
-              >
-              <button
-                className="w-5 md:w-10"
-                onClick={() => {
+              onClick={() => {
                   setQuestion("");
                   setQaPair([]);
                   setChatWindow(true);
                 }}
+                className="flex items-center gap-2"
               >
+                <p className="text-sm md:text-base">New Chat</p>
                 <img src={newChat} alt="Newchat.svg" />
-              </button>
               </Link>
             </div>
             <Link
