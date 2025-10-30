@@ -1,16 +1,15 @@
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function NavBar() {
-  const navigate = useNavigate();
-
-  const handleCLick = () => {
-    navigate("/");
-  };
+  
   return (
+    <Link
+    to='/home'>
     <header>
-      <h1 onClick={handleCLick} className="cursor-pointer">
+      <h1 className="cursor-pointer">
         Bot AI
       </h1>
     </header>
+    </Link>
   );
 }

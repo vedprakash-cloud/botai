@@ -4,6 +4,7 @@ import NavBar from "./component/navBar";
 import SideBar from "./component/sideBar";
 import data from "./data.json";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Main from './component/mainPage'
 import Buttons from "./component/buttons";
 import { useState } from "react";
 import "./App.css";
@@ -21,7 +22,6 @@ function App() {
       const updatedChat = [...savedChat, qaPair];
 
       localStorage.setItem("data", JSON.stringify(updatedChat));
-
       alert("chat saved successfully!");
     } catch (err) {
       console.error("Error in saving the chat data!");
@@ -64,12 +64,14 @@ function App() {
       minute: "2-digit",
     });
 
+
     setQaPair((prev) => [
       ...prev,
       {
         id: cardId,
         question: { text: userQuestion, isUser: true, time },
         response: { text: botAnswer, isUser: false, time },
+        rating:null,
       },
     ]);
   };
@@ -106,6 +108,8 @@ function App() {
               }
             />
             <Route path="/history" element={<SavedChat />} />
+            <Route path="/home" element={<Main />} 
+              />
           </Routes>
           <div className="mx-3">
             <Buttons

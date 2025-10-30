@@ -1,7 +1,7 @@
 import profile from "../assets/Group 1000011097.svg";
 import newChat from "../assets/image 31.svg";
 import { Link } from "react-router-dom";
-
+import Avatar from '@mui/material/Avatar';
 export default function SideBar({
   setQuestion,
   setQaPair,
@@ -15,7 +15,7 @@ export default function SideBar({
     <div>
       <div className="hidden md:flex flex-col gap-5">
         <div className="bg-[#D7C7F4] py-1 px-0 text-lg flex justify-evenly rounded-sm">
-          <img src={profile} alt="logo.svg" className="w-10 shadow-xs" />
+          <Avatar src={profile} alt="logo.svg" />
           <Link
           to='/'
           onClick={() => {

@@ -11,7 +11,7 @@ export default function LikeDislike({onLike, onDislike}) {
 
 
     const handleLike =()=>{
-        setLike(!like);
+        setLike(true);
         setSelectedLike(selectedLike+1);
         if(dislike){
             setDislike(false);
@@ -19,7 +19,7 @@ export default function LikeDislike({onLike, onDislike}) {
     }
 
     const handleDislike = ()=>{
-        setDislike(!dislike);
+        setDislike(true);
         setSelectedDislike(selectedDislike+1)
         if(like){
             setLike(false);
@@ -30,12 +30,12 @@ export default function LikeDislike({onLike, onDislike}) {
     <div className='flex gap-2'>
       <div>
         <button type='button' onClick={handleLike}>
-            {like ? <ThumbsUpIcon color="blue" /> : <ThumbsUpIcon />} {selectedLike}
+            {like ? <ThumbsUpIcon size={15} color="blue" /> : <ThumbsUpIcon size={15} color='grey'/>}
         </button>
       </div>
       <div>
         <button type='button' onClick={handleDislike}>
-            {dislike ? <ThumbsDownIcon color="red"/> : <ThumbsDownIcon />} {selectedDislike}
+            {dislike ? <ThumbsDownIcon size={15} color='red'/> : <ThumbsDownIcon size={15} color='grey'/>}
         </button>
       </div>
     </div>
